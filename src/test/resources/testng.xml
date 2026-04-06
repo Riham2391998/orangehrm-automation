@@ -1,0 +1,45 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<!--
+    testng.xml - TestNG Suite Configuration File
+    =============================================
+    This file tells TestNG WHICH tests to run and in what ORDER.
+
+    Structure:
+      <suite>   → The whole test run
+        <test>  → A group of test classes
+          <classes> → Specific test classes to include
+-->
+<suite name="OrangeHRM Automation Suite" verbose="2">
+
+    <!--
+        verbose="2" means TestNG prints detailed output.
+        Change to "1" for less output, "0" for minimal output.
+    -->
+
+    <!-- ==========================================
+         Test Group 1: Login Tests
+         ========================================== -->
+    <test name="Login Tests">
+        <classes>
+            <class name="tests.LoginTest"/>
+        </classes>
+    </test>
+
+    <!-- ==========================================
+         Test Group 2: Employee Management Tests
+         ========================================== -->
+    <test name="Employee Management Tests">
+        <classes>
+            <class name="tests.AddEmployeeTest">
+                <!-- Run only the single employee test (remove to run all) -->
+                <methods>
+                    <include name="testAddSingleEmployee"/>
+                    <!-- Uncomment below to also run data-driven test: -->
+                    <!-- <include name="testAddMultipleEmployees"/> -->
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>
