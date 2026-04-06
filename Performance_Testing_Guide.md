@@ -1,24 +1,10 @@
-# Performance Testing Guide — OrangeHRM (JMeter)
-
-## What is Performance Testing?
-Performance testing checks how the system behaves under load.
-We simulate 50 users hitting the "Add Employee" API at the same time
-to see if the server handles it well.
+ Performance Test (JMeter)
 
 ---
 
-## Step 1: Install JMeter
+Create the Test Plan
 
-1. Go to: https://jmeter.apache.org/download_jmeter.cgi
-2. Download **apache-jmeter-x.x.x.zip** (Binary)
-3. Extract the ZIP
-4. Run: `bin/jmeter.bat` (Windows) or `bin/jmeter.sh` (Mac/Linux)
-
----
-
-## Step 2: Create the Test Plan
-
-### 2.1 — Set Up Thread Group (50 Users)
+Set Up Thread Group (50 Users)
 
 In JMeter:
 1. Right-click **Test Plan** → Add → Threads (Users) → **Thread Group**
@@ -104,9 +90,6 @@ Add these three listeners (right-click Thread Group → Add → Listener):
 
 ---
 
-## Step 5: Write Your Performance Report
-
-Include these sections in your report:
 
 ### Test Configuration
 - Tool: Apache JMeter 5.x
