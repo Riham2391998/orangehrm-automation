@@ -1,16 +1,25 @@
-# API Testing Guide — OrangeHRM
+# API Testing
 
-## Part 1: How to Capture API Requests from Browser DevTools
+I captured API requests using Chrome DevTools and tested them using Postman.
 
-### Step-by-Step:
+## What I did
+- Opened OrangeHRM demo
+- Used DevTools (Network tab)
+- Filtered XHR requests
+- Performed login and add employee actions
+- Identified the related API calls
 
-1. Open Chrome and go to: `https://opensource-demo.orangehrmlive.com`
-2. Press **F12** (or right-click → Inspect) to open DevTools
-3. Click the **Network** tab
-4. Check the box **"Preserve log"** (so requests don't disappear after redirect)
-5. Filter by **"XHR"** or **"Fetch"** to see only API calls (not images/CSS)
-6. Now perform an action (e.g., log in)
-7. You'll see requests appear in the list
+## APIs tested
+- Login API
+- Add Employee API
+
+## Validations
+- Checked status codes (200 OK)
+- Validated response body
+- Verified authentication works correctly
+
+## Notes
+Token was captured from login request and reused in other requests.
 
 ### What to look for:
 - **Login request**: Look for a POST to `/web/index.php/auth/validateCredentials` or `/api/v2/auth/login`
